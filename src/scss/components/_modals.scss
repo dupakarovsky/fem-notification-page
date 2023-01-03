@@ -1,0 +1,33 @@
+/*! ===== MODALS ===== */
+@use "../abstract/variables" as *;
+@use "../base/utilities" as *;
+
+.popup {
+   &__wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: var(--size-2);
+      /* ~ */
+      max-width: 50%;
+      background-color: $neutral-white;
+      padding: var(--size-3);
+      border: 1px solid $neutral-grayish-blue-1;
+      border-radius: var(--radius-2);
+      text-align: center;
+      transition: all var(--ttime) 0.1s;
+   }
+
+   &__box {
+      display: flex;
+      justify-content: center;
+      gap: var(--size-4);
+      /* ~ */
+   }
+   &.hidden {
+      opacity: 0;
+      z-index: -1;
+   }
+   &.hidden .popup__wrapper {
+      transform: scale(0);
+   }
+}

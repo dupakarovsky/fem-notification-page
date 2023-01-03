@@ -1,0 +1,27 @@
+{
+   "name": "18_notification_page_2",
+   "version": "1.0.0",
+   "description": "notification 2 with parcel",
+   "source": "index.html",
+   "scripts": {
+      "clean-dist": "rm -rf dist && mkdir dist",
+      "copy-img": "cp -vR ./src/images/* dist",
+      "copy-fonts": "cp -r src/fonts/* dist",
+      "init": "npm run clean-dist && npm run copy-img",
+      "start": "npm run init && parcel",
+      "build": "npm run init && parcel build"
+   },
+   "author": "Dan Dupakarovsky",
+   "license": "ISC",
+   "devDependencies": {
+      "@parcel/transformer-sass": "^2.8.2",
+      "parcel": "^2.8.2",
+      "postcss": "^8.4.20",
+      "postcss-jit-props": "^1.0.8",
+      "postcss-preset-env": "^7.8.3",
+      "sass": "^1.57.1"
+   },
+   "dependencies": {
+      "open-props": "^1.5.3"
+   }
+}

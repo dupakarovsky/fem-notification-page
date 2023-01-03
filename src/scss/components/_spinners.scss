@@ -1,0 +1,27 @@
+@use "../abstract/variables" as *;
+@use "../base/animations" as *;
+
+/*! ===== LOADING SPINNERS ===== */
+.spinner__wrapper.hidden {
+   opacity: 0;
+   z-index: -1;
+}
+
+.spinner {
+   width: 5rem;
+   height: 5rem;
+   border-width: 1rem;
+   border-style: solid;
+   border-radius: 100vw;
+   border-top-color: transparent;
+   border-left-color: $neutral-white;
+   border-right-color: $neutral-white;
+   border-bottom-color: $neutral-white;
+
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+
+   animation: rotation 1s linear 0s infinite;
+}

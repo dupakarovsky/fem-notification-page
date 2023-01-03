@@ -1,0 +1,27 @@
+/*! ===== UTILITIES ===== */
+@use "../abstract/variables" as *;
+
+.backdrop {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   /* ~ */
+   backdrop-filter: blur(2px) brightness(80%);
+   position: absolute;
+   inset: 0;
+   z-index: 0;
+   transition: all var(--ttime);
+}
+
+.sr-only {
+   position: absolute;
+   width: 1px;
+   height: 1px;
+   padding: 0;
+   margin: -1px;
+   overflow: hidden;
+   clip: rect(0, 0, 0, 0);
+   white-space: nowrap;
+   border-width: 0;
+}

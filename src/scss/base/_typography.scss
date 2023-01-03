@@ -1,0 +1,72 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as mx;
+/*! ===== TYPOGRAPHY ===== */
+
+.heading__primary {
+   font-size: var(--font-size-3);
+   color: $neutral-dark-blue;
+   font-weight: 800;
+}
+
+.pending {
+   font-size: var(--font-size-2);
+   color: $neutral-white;
+   user-select: none;
+}
+
+.poster {
+   font-size: calc(var(--font-size-0) * 1.15);
+   color: $neutral-dark-blue;
+   font-weight: var(--font-weight-8);
+}
+
+.action {
+   font-size: calc(var(--font-size-0) * 1.15);
+   color: $neutral-grayish-blue-2;
+}
+
+.subject {
+   font-size: calc(var(--font-size-0) * 1.15);
+   color: $neutral-grayish-blue-2;
+   font-weight: var(--font-weight-8);
+}
+
+.content {
+   &__timestamp {
+      font-size: calc(var(--font-size-0) * 1.15);
+      color: $neutral-grayish-blue-1;
+   }
+   &__message {
+      font-size: calc(var(--font-size-0) * 1.25);
+      color: $neutral-grayish-blue-2;
+   }
+}
+
+.popup__warning {
+   font-size: var(--font-size-0);
+   color: $neutral-dark-blue;
+   font-weight: 800;
+}
+
+@include mx.media-responsive-above(640px) {
+   .heading__primary {
+      font-size: var(--font-size-4);
+   }
+   .poster {
+      font-size: var(--font-size-1);
+   }
+   .action {
+      font-size: var(--font-size-1);
+   }
+   .subject {
+      font-size: var(--font-size-1);
+   }
+   .content {
+      &__timestamp {
+         font-size: var(--font-size-1);
+      }
+   }
+   .popup__warning {
+      font-size: var(--font-size-1);
+   }
+}

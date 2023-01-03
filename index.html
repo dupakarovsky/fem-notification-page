@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" color-scheme="light">
+   <head>
+      <title>Frontend Mentor | Notifications page</title>
+      <meta charset="utf-8" />
+
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta name="mobile-web-app-capable" content="yes" />
+      <meta name="description" content="🙂" />
+      <meta name="color-scheme" content="dark light" />
+
+      <link rel="icon" type="image/png" sizes="32x32" href="src/images/favicon-32x32.png" />
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+         crossorigin="anonymous"
+         referrerpolicy="no-referrer"
+      />
+      <link rel="stylesheet" href="index.scss" />
+      <script type="module" src="src/js/controller.js"></script>
+   </head>
+   <body>
+      <main class="app">
+         <!-- HEADER  -->
+         <header class="header">
+            <h1 class="heading__primary"><span>Notifications</span><span class="pending" id="pending">3</span></h1>
+            <button class="confirm__markall" id="mark-all">Mark all as read?</button>
+         </header>
+
+         <!-- NOTIFICATIONS -->
+         <ul class="notifications-wrapper"></ul>
+
+         <!-- CLEAR CONFIMATION  -->
+         <div class="popup backdrop hidden">
+            <div class="popup__wrapper">
+               <h2 class="popup__warning">Confirm mark all as read?</h2>
+               <!-- Confirmation box -->
+               <div class="popup__box">
+                  <!-- Confirm yes  -->
+                  <button aria-label="Confirm Yes button" class="confirm__button confirm__button--yes" id="confirm-yes">
+                     <i class="fa-solid fa-circle-check"></i>
+                  </button>
+                  <button aria-label="Confirm No button" class="confirm__button confirm__button--no" id="confirm-no">
+                     <i class="fa-solid fa-circle-xmark"></i>
+                  </button>
+               </div>
+            </div>
+         </div>
+
+         <!-- SPINNER  -->
+         <div class="spinner__wrapper backdrop hidden">
+            <div class="spinner"></div>
+         </div>
+      </main>
+   </body>
+</html>

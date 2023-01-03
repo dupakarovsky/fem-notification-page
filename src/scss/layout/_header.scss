@@ -1,0 +1,26 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as mx;
+/*! ===== HEADER ===== */
+
+.header {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   //
+   margin-block-end: var(--size-5);
+}
+
+.heading__primary {
+   display: flex;
+}
+
+.pending {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   //
+   min-width: 2rem;
+   margin-inline-start: var(--size-2);
+   border-radius: var(--radius-2);
+   background-color: $primary-blue;
+}

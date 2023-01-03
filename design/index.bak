@@ -1,0 +1,71 @@
+// import "./index.scss";
+
+const app = document.querySelector(".app");
+const notifications = [...document.querySelectorAll(".notification")];
+const message = document.querySelector(".content__message");
+const pending = document.getElementById("pending");
+const markAllBtn = document.getElementById("mark-all");
+const popup = document.querySelector(".popup");
+const confirmBox = document.querySelector(".popup__box");
+
+let unreadMessages = document.querySelectorAll(".notification.unread").length;
+
+const markNotificationAsRead = (e) => {
+   const notification = e.target.closest(".notification.unread");
+   if (!notification) return;
+
+   notification.classList.remove("unread");
+
+   updateUnreadMessages();
+};
+
+const updateUnreadMessages = () => {
+   document.querySelectorAll(".notification.unread").length;
+   pending.textContent = document.querySelectorAll(".notification.unread").length;
+};
+
+const toggleMessageVisibility = (parent) => {
+   const message = parent.querySelector(".content__message");
+   if (!message || !message.textContent === "") return;
+
+   const messageWrapper = message.closest(".content__message-wrapper");
+
+   const selected = window.getSelection();
+   if (selected.focusNode.textContent === message.textContent && selected.type === "Range") return;
+
+   messageWrapper.classList.contains("hidden")
+      ? messageWrapper.classList.remove("hidden")
+      : messageWrapper.classList.add("hidden");
+};
+
+const displayConfirmationBox = (e) => {
+   if (!unreadMessages) return;
+   popup.classList.remove("hidden");
+};
+
+const markAllMessagesAsRead = (e) => {
+   const btn = e.target.closest(".confirm__button");
+   if (!btn) return;
+
+   if (btn.id === "confirm-yes") {
+      notifications.forEach((notification) => {
+         notification.classList.remove("unread");
+         updateUnreadMessages();
+         popup.classList.add("hidden");
+      });
+   }
+   if (btn.id === "confirm-no") {
+      popup.classList.add("hidden");
+   }
+};
+
+app.addEventListener("mouseup", (e) => {
+   const notification = e.target.closest(".notification");
+   if (!notification) return;
+
+   markNotificationAsRead(e);
+   toggleMessageVisibility(notification);
+});
+markAllBtn.addEventListener("click", displayConfirmationBox);
+confirmBox.addEventListener("click", markAllMessagesAsRead);
+updateUnreadMessages();

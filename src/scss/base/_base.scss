@@ -1,0 +1,42 @@
+@use "../abstract/variables" as *;
+@use "../abstract/fonts" as ft;
+@use "../abstract/mixins" as mx;
+
+/*! ===== BASE ===== */
+@include mx.my-reset;
+@include ft.font-face($ff-primary);
+@include mx.os-dark;
+@include mx.os-light;
+@include mx.media-reduce-motion;
+
+/* ======= DELETE ME ========= */
+* {
+   transition: transform 0.2s linear;
+}
+
+body {
+   display: grid;
+   place-items: center;
+   //
+   font-family: $ff-primary;
+}
+
+.app {
+   width: 100%;
+   max-width: $size-desktop;
+   min-width: $size-mobile;
+   background-color: $neutral-white;
+   padding: var(--size-5) var(--size-3);
+   border-radius: var(--radius-2);
+   box-shadow: var(--shadow-1);
+   overflow: hidden;
+   //
+   position: relative;
+}
+
+@include mx.media-responsive-above(640px) {
+   .app {
+      padding: var(--size-4) var(--size-6);
+      border-radius: var(--radius-3);
+   }
+}

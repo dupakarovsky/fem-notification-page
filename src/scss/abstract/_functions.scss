@@ -1,0 +1,14 @@
+@use "maps" as mp;
+@use "sass:map";
+
+@function weight($value) {
+   @return map.get(mp.$font-weights, $value);
+}
+
+@function screen($value) {
+   @return map.get(mp.$screen-sizes, $value);
+}
+
+@function alpha($color, $alfa-value: 1) {
+   @return change-color($color, $alpha: $alfa-value);
+}

@@ -1,0 +1,42 @@
+/*! ===== BUTTONS ===== */
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as mx;
+
+%button {
+   font-size: calc(var(--font-size-0) * 1.25);
+   color: $neutral-grayish-blue-2;
+   background-color: transparent;
+   border: none;
+   cursor: pointer;
+
+   &:focus-visible {
+      @include mx.focus-interact;
+   }
+}
+
+.confirm__markall {
+   @extend %button;
+   &:hover,
+   &:active {
+      color: $primary-blue;
+   }
+}
+
+.confirm__button {
+   font-size: calc(var(--font-size-4) * 1.25);
+   @extend %button;
+
+   &--yes {
+      &:hover,
+      &:active {
+         color: var(--green-7);
+      }
+   }
+
+   &--no {
+      &:hover,
+      &:active {
+         color: var(--red-10);
+      }
+   }
+}

@@ -1,0 +1,8 @@
+@use "variables" as *;
+
+@mixin font-face($name) {
+   @font-face {
+      font-family: #{$name};
+      src: url("./src/fonts/PlusJakartaSans-VariableFont_wght.ttf") format("truetype");
+   }
+}
